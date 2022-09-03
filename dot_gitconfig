@@ -1,0 +1,25 @@
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[pull]
+    ff = only
+
+[user]
+	email = stratonikov@runbox.com
+    name = Evgenii Stratonikov
+	signingkey = F56269F3D0957217
+
+[advice]
+	skippedCherryPicks = false
