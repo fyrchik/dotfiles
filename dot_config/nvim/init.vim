@@ -151,6 +151,20 @@ autocmd BufNewFile *.sh
 autocmd BufNewFile *.bash
 \	call append(0, ['#!/bin/bash -e', '', 'set -euo pipefail', ''])
 
+autocmd BufNewFile *.m
+\	call append(0, [
+\		'%---------------------------------------------------------------------------%',
+\		'% vim: ts=4 sw=4 et ft=mercury',
+\		'%---------------------------------------------------------------------------%',
+\		'',
+\		':- module ' . expand('%:r') . '.',
+\		':- interface.',
+\		':- implementation.',
+\		'%---------------------------------------------------------------------------%',
+\		':- end_module ' . expand('%:r') . '.',
+\		'%---------------------------------------------------------------------------%'])
+
+
 function ManMode()
 	nnoremap <buffer> <ESC><ESC> :q!<CR>
 	nnoremap <buffer> q :q!<CR>
